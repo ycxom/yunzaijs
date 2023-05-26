@@ -27,15 +27,11 @@ export class example extends plugin {
                     fnc: 'bq'
                 },
                 {
-                    /** 命令正则匹配 */
                     reg: '^#(叼|吊|屌|沙雕)发言$',
-                    /** 执行方法 */
                     fnc: 'qydiaotu'
                 },
                 {
-                    /** 命令正则匹配 */
                     reg: '^#来张(叼|雕|吊)图$',
-                    /** 执行方法 */
                     fnc: 'diaotu'
                 },
             ]
@@ -54,22 +50,16 @@ export class example extends plugin {
     }
     async bq(e) {
         logger.info('[用户命令]'); {
-            //读取文件夹里面的所有图片文件名
             let photo_list = fs.readdirSync(path + tp_bq)
-            //随机选择一个文件名
             let photo_number = Math.floor(Math.random() * photo_list.length)
-            //发送图片
             e.reply(segment.image('file:///' + path + tp_bq + photo_list[photo_number]))
 
         }
     }
     async diaotu(e) {
         logger.info('[用户命令]'); {
-            //读取文件夹里面的所有图片文件名
             let photo_list = fs.readdirSync(path + tp_dt)
-            //随机选择一个文件名
             let photo_number = Math.floor(Math.random() * photo_list.length)
-            //发送图片
             e.reply(segment.image('file:///' + path + tp_dt + photo_list[photo_number]))
 
         }
