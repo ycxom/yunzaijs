@@ -10,8 +10,8 @@ const hfms = '2'
 //添加屏蔽词，用`|`分开继续添加
 const pbc = '^(替死鬼|#添加(.*)|添加(.*)|1)$'
 
-//定义图片路径 默认是Yunzai-Bot/resources/yuhuo/picCollect/dt/
-const tp_a = '../../../tp-bq/pictures/'
+//定义图片路径 默认是Yunzai-Bot/resources/yuhuo/picCollect/
+const tp_a = '/resources/yuhuo/picCollect/'
 
 //拦截强度，越小越大
 const priority_sz = 20
@@ -60,22 +60,19 @@ export class example extends plugin {
         await common.sleep(500);
         e.reply(`沙皮东西`)
         await common.sleep(500);*/
-        if (e.user.id = /*1491233597*/2326980754) {
-            let msg_1 = ['一定是',segment.at(e.user.id),'教的']
-            e.reply(msg_1)
-            await common.sleep(1000);
-            e.reply(segment.image('file:///' + path + tp_a + photo_list[photo_number]))
-        }
+        e.reply('你在发什么啊')
+        await common.sleep(1000);
+        e.reply(segment.image('file:///' + path + tp_a + photo_list[photo_number]))
     }
     //文字回复模式
     async 3(e) {
         let msg = e.msg.replace(" ").trim();
         msg = msg.split(" ");
-        e.reply(msg + `你m呢` + msg)
+        e.reply(msg + `？呢` + msg)
         await common.sleep(500);
         e.reply(`沙皮东西`)
         await common.sleep(500);
-        e.reply(`一定是` + 1491233597 + `教的`)
+        e.reply(`一定是群里某个人教的`)
     }
 
 }
